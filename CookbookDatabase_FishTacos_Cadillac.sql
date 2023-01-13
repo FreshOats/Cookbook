@@ -38,36 +38,37 @@ VALUES
 CREATE TABLE Ingredients
 (
 	Ingredient		VARCHAR(50)		NOT NULL,
-	Quantity		VARCHAR(50)		NOT NULL,
+	Quantity		FLOAT			NOT NULL,
+	Units			VARCHAR(50)		NOT NULL,
 	Recipe			VARCHAR(100)			, 
 	Step_number		INT						,
 	Substitutes		VARCHAR(50)				,
 	PRIMARY KEY (Ingredient, Recipe, Step_number)
 );
 
-INSERT INTO Ingredients (Ingredient, Quantity, Recipe, Step_number, Substitutes)
+INSERT INTO Ingredients (Ingredient, Quantity, Units, Recipe, Step_number, Substitutes)
 VALUES
-('Yellow Onion', '1 small-medium sized', 'Ancho Fish Tacos', 1, NULL), 
-('Red Wine Vinegar', 'As needed', 'Ancho Fish Tacos', 1, NULL),
-('Olive Oil', '1/4 Cup', 'Ancho Fish Tacos', 2, 'Vegetable Oil'), 
-('Ancho Chili (ground)', '1.5 tsp', 'Ancho Fish Tacos', 2, 'Chipotle Chili Powder, Chili Powder'),
-('Oregano', '1.5 tsp', 'Ancho Fish Tacos', 2, NULL), 
-('Cumin', '1/2 tsp', 'Ancho Fish Tacos', 2, NULL), 
-('Cilantro (fresh, chopped)', '2-3 tbsp', 'Ancho Fish Tacos', 2, '1 tsp dry Coriander'), 
-('Red Wine Vinegar', 'As needed', 'Ancho Fish Tacos', 3, NULL),
-('White Fish (tilapia, catfish, cod, mahi mahi)', '2-3 fillets', 'Ancho Fish Tacos', 4, 'Any white fish'),
-('Salt', 'As needed', 'Ancho Fish Tacos', 4, NULL),
-('Corn Tortillas, Soft', '6-10 small tortillas', 'Ancho Fish Tacos', 6, 'Other tortillas, may substitute as burrito'),
-('Sour Cream', 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
-('Lime (juice)', '1 slice per taco', 'Ancho Fish Tacos', 7, 'Lemon'),
-('Cilantro (fresh, chopped)', 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
-('Reposado Tequila', '1.5 oz', 'Cadillac Margarita', 2, 'Any good tequila'), 
-('Cointreau', '1 oz', 'Cadillac Margarita', 2, 'Triple Sec'), 
-('Gran Marnier', '1 oz', 'Cadillac Margarita', 3, NULL), 
-('Lime Juice (fresh)', '1 oz', 'Cadillac Margarita', 2, 'Lemon Juice (fresh)'), 
-('Ice', 'As needed', 'Cadillac Margarita', 2, NULL), 
-('Lime', '1 wedge', 'Cadillac Margarita', 1, 'Lemon'), 
-('Kosher Salt', 'As needed', 'Cadillac Margarita', 1, 'Flaky Salt, Sea Salt, NOT iodized salt')
+('Yellow Onion', 1, 'small-medium sized', 'Ancho Fish Tacos', 1, NULL), 
+('Red Wine Vinegar', 0.5, 'Cups + As needed', 'Ancho Fish Tacos', 1, NULL),
+('Olive Oil', 0.25, 'Cup', 'Ancho Fish Tacos', 2, 'Vegetable Oil'), 
+('Ancho Chili (ground)', 1.5,  'tsp', 'Ancho Fish Tacos', 2, 'Chipotle Chili Powder, Chili Powder'),
+('Oregano', 1.5, 'tsp', 'Ancho Fish Tacos', 2, NULL), 
+('Cumin', 0.5, 'tsp', 'Ancho Fish Tacos', 2, NULL), 
+('Cilantro (fresh, chopped)', 3, 'tbsp', 'Ancho Fish Tacos', 2, 'tsp dry Coriander'), 
+('Red Wine Vinegar', 0, 'as needed', 'Ancho Fish Tacos', 3, NULL),
+('White Fish (tilapia, catfish, cod, mahi mahi)', 3, 'fillets', 'Ancho Fish Tacos', 4, 'Any white fish'),
+('Salt', 0, 'As needed', 'Ancho Fish Tacos', 4, NULL),
+('Corn Tortillas, Soft', 8, 'small tortillas', 'Ancho Fish Tacos', 6, 'Other tortillas, may substitute as burrito'),
+('Sour Cream', 1, 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
+('Lime', 6, 'wedge', 'Ancho Fish Tacos', 7, 'Lemon'),
+('Cilantro (fresh, chopped)', 0, 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
+('Reposado Tequila', 1.5, 'oz', 'Cadillac Margarita', 2, 'Any good tequila'), 
+('Cointreau', 1, 'oz', 'Cadillac Margarita', 2, 'Triple Sec'), 
+('Gran Marnier', 1, 'oz', 'Cadillac Margarita', 3, NULL), 
+('Lime Juice (fresh)', 1, 'oz', 'Cadillac Margarita', 2, 'Lemon Juice (fresh)'), 
+('Ice', 0, 'As needed', 'Cadillac Margarita', 2, NULL), 
+('Lime', 1, 'wedge', 'Cadillac Margarita', 1, 'Lemon'), 
+('Kosher Salt', 0, 'As needed', 'Cadillac Margarita', 1, 'Flaky Salt, Sea Salt, NOT iodized salt')
 ;
 
 
