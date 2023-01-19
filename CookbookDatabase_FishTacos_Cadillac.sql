@@ -100,5 +100,104 @@ VALUES
 
 
 
+CREATE TABLE Album
+(
+	Album			VARCHAR(100)	NOT NULL, 
+	Band			VARCHAR(50)		NOT NULL,
+	Recipe_Pairing	VARCHAR(100) 	NOT NULL,
+	Drink_Pairing	VARCHAR(50), 
+	PRIMARY KEY (Album, Band)
+);
+
+INSERT INTO Album (Album, Band, Recipe_Pairing, Drink_Pairing)
+VALUES
+('Gipsy Kings', 'Gipsy Kings', 'Ancho Fish Tacos', 'Cadillac Margarita')
+;
+
+
+CREATE TABLE Album_Tracks
+(
+	Album			VARCHAR(100)	NOT NULL,
+	Band			VARCHAR(50)		NOT NULL,
+	Track			INT				NOT NULL,
+	Title			VARCHAR(500)	NOT NULL,
+	PRIMARY KEY (Album, Band, Track)
+);
+
+
+INSERT INTO Album_Tracks (Album, Band, Track, Title)
+VALUES
+('Gipsy Kings', 'Gipsy Kings', 1, 'Bamboleo'), 
+('Gipsy Kings', 'Gipsy Kings', 2, 'Tu Quieres Volver'), 
+('Gipsy Kings', 'Gipsy Kings', 3, 'Moorea'), 
+('Gipsy Kings', 'Gipsy Kings', 4, 'Bem, Bem, Maria'), 
+('Gipsy Kings', 'Gipsy Kings', 5, 'Un Amor'), 
+('Gipsy Kings', 'Gipsy Kings', 6, 'Inspiration'), 
+('Gipsy Kings', 'Gipsy Kings', 7, 'A Mi Manera'), 
+('Gipsy Kings', 'Gipsy Kings', 8, 'Djobi, Djobi'), 
+('Gipsy Kings', 'Gipsy Kings', 9, 'Faena'), 
+('Gipsy Kings', 'Gipsy Kings', 10, 'Quiero Saber'), 
+('Gipsy Kings', 'Gipsy Kings', 11, 'Amor, Amor'), 
+('Gipsy Kings', 'Gipsy Kings', 12, 'Duende') 
+;
+
+COMMIT TRANSACTION
+
+
+
+
+
+
+-- Basil Fried Rice Pairings
+
+INSERT INTO Recipes (Recipe_Name, Servings, Drink_Pairing)
+VALUES
+('Basil Fried Rice', 2, 'Angostura Gin and Tonic'),
+('Angostura Gin and Tonic', 1,  NULL);
+
+
+INSERT INTO Ingredients (Ingredient, Quantity, Units, Recipe, Step_number, Substitutes)
+VALUES
+('Vegetable Oil', 0.25, 'Cup', 'Basil Fried Rice', 0, 'Canola Oil'),
+('Sesame Oil', 2, 'Tsp', 'Basil Fried Rice', 0, NULL)
+;
+
+INSERT INTO Steps (Recipe, Step_Number, Instruction)
+VALUES
+('Angostura Gin and Tonic', 0, ''),
+('Basil Fried Rice', 0, ''), 
+
+
+
+INSERT INTO Album_Tracks (Album, Band, Track, Title)
+VALUES
+('Doom Side of the Moon', 'Doom Side of the Moon', 1, 'Speak to Me'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 2, 'Breathe (In The Air)'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 3, 'On the Run'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 4, 'Time'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 5, 'The Great Gig In The Sky'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 6, 'Money'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 7, 'Us And Them'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 8, 'Any Colour You Like'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 9, 'Brain Damage'),
+('Doom Side of the Moon', 'Doom Side of the Moon', 10, 'Eclipse'),
+('Encore EP', 'Doom Side of the Moon', 1, 'Have A Cigar'),
+('Encore EP', 'Doom Side of the Moon', 2, 'Pigs (Three Different Ones)'),
+('Encore EP', 'Doom Side of the Moon', 3, 'Wish You Were Here')
+;
+
+
+
+
+INSERT INTO Album (Album, Band, Recipe_Pairing, Drink_Pairing)
+VALUES
+('Doom Side of the Moon', 'Doom Side of the Moon', 'Basil Fried Rice', 'Angostura Gin and Tonic'),
+('Encore EP', 'Doom Side of the Moon', 'Basil Fried Rice', 'Angostura Gin and Tonic');
+
+
+
+
+
+
 
 COMMIT TRANSACTION;
