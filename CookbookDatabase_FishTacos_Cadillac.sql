@@ -26,14 +26,15 @@ CREATE TABLE Recipes
 	Recipe_name		VARCHAR(100) 	NOT NULL
 		PRIMARY KEY,
 	Servings		INT				NOT NULL, 
-	Drink_Pairing	VARCHAR(50)
+	Drink_Pairing	VARCHAR(50), 
+	Band_Pairing	VARCHAR(50)
 );
 
 
-INSERT INTO Recipes (Recipe_Name, Servings, Drink_Pairing)
+INSERT INTO Recipes (Recipe_Name, Servings, Drink_Pairing, Band_Pairing)
 VALUES
-('Ancho Fish Tacos', 2, 'Cadillac Margarita'),
-('Cadillac Margarita', 1,  NULL);
+('Ancho Fish Tacos', 2, 'Cadillac Margarita', 'Gipsy Kings'),
+('Cadillac Margarita', 1,  NULL, 'Gipsy Kings');
 
 CREATE TABLE Ingredients
 (
@@ -59,7 +60,7 @@ VALUES
 ('White Fish (tilapia, catfish, cod, mahi mahi)', 3, 'fillets', 'Ancho Fish Tacos', 4, 'Any white fish'),
 ('Salt', 0, 'As needed', 'Ancho Fish Tacos', 4, NULL),
 ('Corn Tortillas, Soft', 8, 'small tortillas', 'Ancho Fish Tacos', 6, 'Other tortillas, may substitute as burrito'),
-('Sour Cream', 1, 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
+('Cabbage', 0.25, 'Head, shredded', 'Ancho Fish Tacos', 7, NULL), 
 ('Lime', 6, 'wedge', 'Ancho Fish Tacos', 7, 'Lemon'),
 ('Cilantro (fresh, chopped)', 0, 'As preferred', 'Ancho Fish Tacos', 7, NULL), 
 ('Reposado Tequila', 1.5, 'oz', 'Cadillac Margarita', 2, 'Any good tequila'), 
@@ -89,16 +90,23 @@ VALUES
 ('Cadillac Margarita', 2, 'Fill mixing glass with ice; add Tequila, Lime Juice, Cointreau. Stir until cold.'),
 ('Cadillac Margarita', 3, 'Pour into salted glass. Carefully pour Gran Marnier over inverted spoon at the top of the drink.'),
 ('Ancho Fish Tacos', 1, 'Marinate Onions - Slice onion and place in plastic bag, add red wine vinegar to cover. Set aside for 30+ minutes'), 
-('Ancho Fish Tacos', 2, 'Marinate Fish - Add olive oil to bowl with ancho chili powder, cumin, oregano, and chopped cilantro. Place fish in plastic bag, add the mix. Marinate in refrigerator for 30+ minutes. Both marinades can go overnight.'), 
-('Ancho Fish Tacos', 3, 'Cook Onions - Heat frying pan over medium-high heat. Add marinating onions with red with vinegar. Fry onions until soft, adding more red wine vinegar or water so onions do not burn. Reduce liquid when onions are soft. Set oinions aside.'), 
+('Ancho Fish Tacos', 2, 'Marinate Fish - Add olive oil to bowl with ancho chili powder, cumin, oregano, and chopped cilantro. Place fish in plastic bag, add the mix. Marinate in refrigerator for 20-30 minutes.'), 
+('Ancho Fish Tacos', 3, 'Cook Onions - Heat frying pan over medium-high heat. Add marinating onions with red with vinegar. Fry onions until soft. Reduce liquid when onions are soft. Set oinions aside.'), 
 ('Ancho Fish Tacos', 4, 'Cook Fish - Heat cast-iron or non-stick pan over medium high heat. Remove fish from marinade and place directly on hot pan. Season with salt, cook 4 minutes. Flip and cook 2 more minutes'), 
 ('Ancho Fish Tacos', 5, 'Remove pan from heat, flake fish with a fork, add remaining marinade from bag or bowl; mix in the hot pan, set aside.'),
 ('Ancho Fish Tacos', 6, 'Heat tortillas on a clean/dry pan or skillet. Flip with bottom starts browning. Keep tortillas warm after removing by covering with foil.'),
-('Ancho Fish Tacos', 7, 'Assemble tacos - add fish to the tortilla, squeeze lime wedge over fish, top with onions, then add sour cream and cilantro'),
-('Ancho Fish Tacos', 8, 'Optional Suggestions: Avocado slices, Cotija cheese (or feta crumbles), salsa, hot sauce!');
+('Ancho Fish Tacos', 7, 'Assemble tacos - add fish to the tortilla, squeeze lime wedge over fish, top with onions, then add shredded cabbage and cilantro'),
+('Ancho Fish Tacos', 8, 'Optional Suggestions: Avocado slices, Cotija cheese (or feta crumbles), salsa, sour cream, hot sauce!');
 
 
+CREATE TABLE Band
+(	
+	Band	VARCHAR(50) NOT NULL PRIMARY KEY
+);
 
+INSERT INTO Band (Band)
+VALUES
+('Gipsy Kings');
 
 CREATE TABLE Album
 (
@@ -150,10 +158,10 @@ COMMIT TRANSACTION
 
 -- Basil Fried Rice Pairings
 
-INSERT INTO Recipes (Recipe_Name, Servings, Drink_Pairing)
+INSERT INTO Recipes (Recipe_Name, Servings, Drink_Pairing, Band_Pairing)
 VALUES
-('Basil Fried Rice', 2, 'Angostura Gin and Tonic'),
-('Angostura Gin and Tonic', 1,  NULL);
+('Basil Fried Rice', 2, 'Angostura Gin and Tonic', 'Doom Side of the Moon'),
+('Angostura Gin and Tonic', 1,  NULL, 'Doom Side of the Moon');
 
 
 INSERT INTO Ingredients (Ingredient, Quantity, Units, Recipe, Step_number, Substitutes)
@@ -167,7 +175,9 @@ VALUES
 ('Angostura Gin and Tonic', 0, ''),
 ('Basil Fried Rice', 0, ''), 
 
-
+INSERT INTO Band (Band)
+VALUES
+('Doom Side of the Moon');
 
 INSERT INTO Album_Tracks (Album, Band, Track, Title)
 VALUES

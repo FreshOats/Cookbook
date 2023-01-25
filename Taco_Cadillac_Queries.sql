@@ -1,4 +1,4 @@
-SELECT	DISTINCT(Ingredient), MAX(Quantity), MAX(Units)
+SELECT	DISTINCT(Ingredient), MAX(Quantity) AS Quantity, MAX(Units) AS Units
 FROM	Ingredients
 WHERE	Recipe = 'Ancho Fish Tacos'
 GROUP BY Ingredient
@@ -52,3 +52,9 @@ WHERE	Recipe = 'Cadillac Margarita'
 GROUP BY Ingredient
 ORDER BY Ingredient 
 
+
+--What music should we listen to? 
+SELECT	*
+FROM	Recipes AS R
+		INNER JOIN 
+		Band AS B ON B.Band = R.Band_Pairing
