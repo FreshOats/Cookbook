@@ -58,6 +58,7 @@ VALUES
 ('Cilantro (fresh, chopped)', 3, 'tbsp', 'Ancho Fish Tacos', 2, 'tsp dry Coriander'), 
 ('Red Wine Vinegar', 0, 'as needed', 'Ancho Fish Tacos', 3, NULL),
 ('White Fish (tilapia, catfish, cod, mahi mahi)', 3, 'fillets', 'Ancho Fish Tacos', 4, 'Any white fish'),
+('White Fish (tilapia, catfish, cod, mahi mahi)', 3, 'fillets', 'Ancho Fish Tacos', 2, 'Any white fish'),
 ('Salt', 0, 'As needed', 'Ancho Fish Tacos', 4, NULL),
 ('Corn Tortillas, Soft', 8, 'small tortillas', 'Ancho Fish Tacos', 6, 'Other tortillas, may substitute as burrito'),
 ('Cabbage', 0.25, 'Head, shredded', 'Ancho Fish Tacos', 7, NULL), 
@@ -73,7 +74,9 @@ VALUES
 ;
 
 
-
+INSERT INTO Ingredients (Ingredient, Quantity, Units, Recipe, Step_number, Substitutes)
+VALUES 
+('White Fish (tilapia, catfish, cod, mahi mahi)', 3, 'fillets', 'Ancho Fish Tacos', 2, 'Any white fish');
 
 CREATE TABLE Steps
 (
